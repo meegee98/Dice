@@ -14,17 +14,18 @@ import java.io.IOException;
 
 public class Dice extends PApplet {
 
+Die theDie;
 public void setup()
 {
 	size(400, 400);
 	noLoop();
-	theDie= new Die(20, 20);
-}
+	}
 public void draw()
 {
 	
 			
-			//theDie.roll();
+			theDie= new Die(20, 20);
+			theDie.roll();
 			theDie.show();//your code here
 }
 	
@@ -34,7 +35,7 @@ public void mousePressed()
 }
 class Die //models one single dice cube
 {
-	int dots= (int)(Math.random()*6)+1;
+	int dots; //
 	int myX, myY;
 	//variable declarations here
 	//constructor
@@ -46,15 +47,73 @@ class Die //models one single dice cube
 	}
 	public void roll()
 	{
+		//dots=1;
+		dots= (int)(Math.random()*6)+1;
 		//your code here
 	}
 	public void show()
 	{
 		stroke(0); //your code here
-		fill(255);
-		rect(myX, myY, 20, 20);
-		
+		//fill((int)(Math.random()*255),(int)(Math.random()*255), (int)(Math.random()*255));
+		//rect(myX, myY, 60, 60);
+		if(dots==1)
+		{
+			fill(255);
+			rect(myX, myY, 60, 60);
+			fill(0);
+			ellipse(myX+30, myY+30, 10, 10);
+		}
+		if(dots==2)
+		{
+			fill(255);
+			rect(myX, myY, 60, 60);
+			fill(0);
+			ellipse(myX+15, myY+15, 10, 10);
+			ellipse(myX+45, myY+45, 10, 10);
+		}
+		if(dots==3)
+		{
+			fill(255);
+			rect(myX, myY, 60, 60);
+			fill(0);
+			ellipse(myX+10, myY+10, 10, 10);
+			ellipse(myX+30, myY+30, 10, 10);
+			ellipse(myX+50, myY+50, 10, 10);
+		}
+		if(dots==4)
+		{
+			fill(255);
+			rect(myX, myY, 60, 60);
+			fill(0);
+			ellipse(myX+15, myY+15, 10, 10);
+			ellipse(myX+45, myY+15, 10, 10);
+			ellipse(myX+15, myY+45, 10, 10);
+			ellipse(myX+45, myY+45, 10, 10);
+		}
+		if(dots==5)
+		{
+			fill(255);
+			rect(myX, myY, 60, 60);
+			fill(0);
+			ellipse(myX+15, myY+15, 10, 10);
+			ellipse(myX+45, myY+15, 10, 10);
+			ellipse(myX+30, myY+30, 10, 10);
+			ellipse(myX+15, myY+45, 10, 10);
+			ellipse(myX+45, myY+45, 10, 10);
+		}
+		if(dots==6)
+		{
+			fill(255);
+			rect(myX, myY, 60, 60);
+			fill(0);
+			ellipse(myX+15, myY+15, 10, 10);
+			ellipse(myX+45, myY+15, 10, 10);
+			ellipse(myX+15, myY+30, 10, 10);
+			ellipse(myX+45, myY+30, 10, 10);
+			ellipse(myX+15, myY+45, 10, 10);
+			ellipse(myX+45, myY+45, 10, 10);
 
+		}
 	}
 }
   static public void main(String[] passedArgs) {
