@@ -115,7 +115,6 @@ class Die //models one single dice cube
 			ellipse(myX+45, myY+30, 10, 10);
 			ellipse(myX+15, myY+45, 10, 10);
 			ellipse(myX+45, myY+45, 10, 10);
-
 		}
 	}
 }
